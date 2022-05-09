@@ -1,0 +1,7 @@
+<!-- <button (click)="exportTableToExcel()" type="button" class="">
+  <i class="fa fa-external-link" aria-hidden="true"></i>
+  Export
+</button> -->
+<ag-grid-angular style="width: 100%; height:85%; overflow-x: scroll" class="ag-theme-alpine" [columnDefs]="columnDefs"
+  [defaultColDef]="defaultColDef" [animateRows]="true" [pagination]="true" [rowData]="rowData"
+  (gridReady)="onGridReady($event)" [suppressHorizontalScroll]=false></ag-grid-angular>

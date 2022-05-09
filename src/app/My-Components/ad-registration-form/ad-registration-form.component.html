@@ -1,0 +1,126 @@
+<div class="create-ad-wrapper">
+  <div class="container">
+    <div class="title">Registration</div>
+    <div *ngIf="message" class="alert alert-success alert-dismissible fade show text-center" role="alert">
+      <strong>Created Successfully!</strong>
+      <!-- <button (click)="removeMessage()" type="button" data-bs-dismiss="alert" aria-label="Close">X</button> -->
+    </div>
+    <form #usersForm="ngForm" (ngSubmit)="getUserFormData(usersForm.value)">
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details">Rank</span>
+          <input type="number" ngModel name="rank" placeholder="Select Rank" />
+        </div>
+
+        <!-- <div class="input-box">
+          <span class="details">App ID</span>
+          <input type="text" ngModel name="app_id" placeholder="624d86908930c4c6ca62c14e" />
+        </div> -->
+        <div class="form-group input-box">
+          <label class="details" for="app_id">App Name</label>
+          <select class="form-control" ngModel name="app_id">
+            <option>Select App</option>
+            <option *ngFor="let app of this.appData; let i = index" value="{{ app._id }}" [selected]="i == 0">{{
+              app.name }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group input-box">
+          <label class="details" for="place_id">Place Name</label>
+          <select class="form-control" ngModel name="place_id">
+            <option>Select Place</option>
+            <option *ngFor="let place of this.placeData; let i = index" value="{{ place._id }}" [selected]="i == 0">{{
+              place.name }}
+            </option>
+          </select>
+        </div>
+        <!-- <div class="input-box">
+          <span class="details">Place ID</span>
+          <input type="text" ngModel name="place_id" placeholder="624d833ca06dda7b1eb27d06" />
+        </div> -->
+        <div class="input-box">
+          <span class="details">Brand Name</span>
+          <input type="text" ngModel name="brand_name" placeholder="Amul" />
+        </div>
+
+        <div class="input-box mb-3">
+          <label for="brand_logo" class="details form-label">Brand Logo</label>
+          <!-- <input class="form-control" ngModel name="brand_logo" type="file" id="brand_logo"> -->
+          <input class="form-control" name="brand_logo" type="file" id="brand_logo" (change)="brandLogoChange($event)">
+        </div>
+
+        <div class="form-group input-box">
+          <label class="details" for="poster_type">Poster Type</label>
+          <select class="form-control" ngModel name="poster_type" id="poster_type">
+            <option value="image">Image</option>
+            <option value="video">Video</option>
+          </select>
+        </div>
+
+        <div class="input-box mb-3">
+          <label for="posterFile" class="details form-label">Poster</label>
+          <input class="form-control" ngModel type="file" name="poster" id="posterFile" (change)="posterChange($event)">
+        </div>
+
+        <div class="input-box">
+          <span class="details">Campaign Title</span>
+          <input type="text" ngModel name="campaign_title" placeholder="The Taste of India" />
+        </div>
+        <div class="input-box">
+          <span class="details">Call to Action</span>
+          <input type="text" ngModel name="call_to_action" placeholder="Dairy Products" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Ad_Click_Url</span>
+          <input type="url" ngModel name="ad_click_url" placeholder="http://www.amul.com/" />
+        </div>
+
+        <div class="form-group input-box">
+          <label class="details" for="status">Status</label>
+          <select class="form-control" ngModel id="status" name="status">
+            <option>draft</option>
+            <option>active</option>
+            <option>inactive</option>
+          </select>
+        </div>
+        <div class="input-box">
+          <span class="details">Gross Price</span>
+          <input type="number" ngModel name="gross_price" placeholder="Enter Gross Price" />
+        </div>
+        <div class="input-box">
+          <span class="details">Net Price</span>
+          <input type="number" ngModel name="net_price" placeholder="Enter Net Price" />
+        </div>
+        <div class="input-box">
+          <span class="details">Tax</span>
+          <input type="number" ngModel name="tax" placeholder="Tax Percentage" />
+        </div>
+
+        <div class="input-box">
+          <label class="details" for="start_date_time">Start_Date_Time</label>
+          <input type="datetime-local" ngModel name="start_date_time">
+        </div>
+
+        <div class="input-box">
+          <label class="details" for="end_date_time">End_Date_Time</label>
+          <input type="datetime-local" ngModel name="end_date_time">
+        </div>
+
+        <div class="input-box">
+          <span class="details">Is_Partial_Payment</span>
+          <input type="text" ngModel name="is_partial_payment" placeholder="True or False" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Pending Amount</span>
+          <input type="number" ngModel name="pending_amount" placeholder="Pending Amount" />
+        </div>
+      </div>
+      <div class="button">
+        <button>Register</button>
+      </div>
+    </form>
+  </div>
+</div>

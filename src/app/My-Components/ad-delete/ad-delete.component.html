@@ -1,0 +1,13 @@
+
+<!-- <button type="button" class="btn-success" (click)="editRow()">Edit</button>
+<button type="button" class="btn-success" (click)="viewRow()">View</button> -->
+<div class="w-100">
+  <!-- <button type="button" class="btn btn-outline-warning mr-1 mb-1" (click)="updateAd()">Update</button> -->
+  <!-- <a routerLink="/update"><button type="button" class="btn btn-outline-warning mr-1 mb-1">Update</button></a> -->
+  <!-- <a (click)="updateAd()"><button type="button" class="btn btn-outline-warning mr-1 mb-1">Update</button></a> -->
+  <a routerLink="/update" [state]="this.params.data"><button type="button" class="btn btn-outline-warning mr-1 mb-1">Update</button></a>
+  <button type="button" class="btn btn-outline-danger mb-1" (click)="deleteAd()">Delete</button>
+</div>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+  <p style="color: white">Please Wait. </p>
+  </ngx-spinner>
